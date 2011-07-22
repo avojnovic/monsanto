@@ -1,5 +1,0 @@
-C:\Proyectos\Monsanto\BussinessObjects\bin\Debug\BussinessObjects.dll
-C:\Proyectos\Monsanto\BussinessObjects\bin\Debug\BussinessObjects.pdb
-C:\Proyectos\Monsanto\BussinessObjects\obj\Debug\ResolveAssemblyReference.cache
-C:\Proyectos\Monsanto\BussinessObjects\obj\Debug\BussinessObjects.dll
-C:\Proyectos\Monsanto\BussinessObjects\obj\Debug\BussinessObjects.pdb
