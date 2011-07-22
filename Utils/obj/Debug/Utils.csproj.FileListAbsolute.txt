@@ -1,0 +1,5 @@
+C:\Proyectos\Monsanto\Utils\obj\Debug\ResolveAssemblyReference.cache
+C:\Proyectos\Monsanto\Utils\bin\Debug\Utils.dll
+C:\Proyectos\Monsanto\Utils\bin\Debug\Utils.pdb
+C:\Proyectos\Monsanto\Utils\obj\Debug\Utils.dll
+C:\Proyectos\Monsanto\Utils\obj\Debug\Utils.pdb
