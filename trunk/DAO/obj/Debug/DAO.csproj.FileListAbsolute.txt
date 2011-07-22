@@ -1,7 +1,0 @@
-C:\Proyectos\Monsanto\DAO\bin\Debug\DAO.dll
-C:\Proyectos\Monsanto\DAO\bin\Debug\DAO.pdb
-C:\Proyectos\Monsanto\DAO\obj\Debug\ResolveAssemblyReference.cache
-C:\Proyectos\Monsanto\DAO\obj\Debug\DAO.dll
-C:\Proyectos\Monsanto\DAO\obj\Debug\DAO.pdb
-C:\Proyectos\Monsanto\DAO\bin\Debug\BussinessObjects.dll
-C:\Proyectos\Monsanto\DAO\bin\Debug\BussinessObjects.pdb
