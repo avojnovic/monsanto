@@ -21,5 +21,16 @@ namespace Monsanto
         }
 
 
+        protected void BtnToHome(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx");
+        }
+
+
+        protected void BtnToProcess(object sender, EventArgs e)
+        {
+            Response.Redirect("Procesamiento.aspx");
+        }
+
     }
 }

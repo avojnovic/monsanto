@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Monsanto.Default" %>
 
+
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
@@ -8,21 +11,41 @@
 
 
      
-     <div id="content">
+     <div id="content" style=" height:100%;">
       <asp:Panel runat="server" ID="panel1" Visible="true" >
         
             <br />
-            <asp:Label runat="server" ID="lblCentroServ" Text="Centro de Servicio"></asp:Label>
-            <asp:DropDownList ID="ddlCentroDeServicio" runat="server" Width="200px"> </asp:DropDownList>
-         
-            <br />
-            <br />
-             <asp:ImageButton ID="BtnAceptar" Width="32px" Height="32px" ImageUrl="~/Images/save.png" runat="server" onclick="BtnGuardar_Click" ToolTip="Guardar" />
-             <asp:ImageButton ID="BtnCancelar" Width="32px" Height="32px" ImageUrl="~/Images/return.png" runat="server" onclick="BtnCancelar_Click"  ToolTip="Cancelar" />
+            <asp:Panel runat="server" ID="paneCentrServ" Visible="true"  Width="100%" style="background-color:#F2F2F2">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                <td style=" width:400px ">
+                    <asp:Label runat="server" ID="lblCentroServ" Text="Centro de Servicio"></asp:Label>
+                    <asp:DropDownList ID="ddlCentroDeServicio" runat="server" Width="200px"> </asp:DropDownList>
+                </td>
+                <td>
+                
+                </td>
+                <td align="right" style=" width:100px;">
+                     <asp:ImageButton ID="BtnAceptar" Width="32px" Height="32px" ImageUrl="~/Images/save.png" runat="server" onclick="BtnGuardar_Click" ToolTip="Guardar" />
+                     <asp:ImageButton ID="BtnCancelar" Width="32px" Height="32px" ImageUrl="~/Images/return.png" runat="server" onclick="BtnCancelar_Click"  ToolTip="Cancelar" />
+             
+                </td>
+                </tr>
+                </table>
+            </asp:Panel>
+            <asp:RoundedCornersExtender ID="RoundedCornersExtender2" runat="server" TargetControlID="paneCentrServ"
+                    Radius="8" Color="#F2F2F2" Corners="All" Enabled="true">
+            </asp:RoundedCornersExtender>
+            
+       
              <br />
+
+
+         <asp:Panel runat="server" ID="PanelTabs" Visible="true"  Width="100%" style="background-color:#F2F2F2">
 
            <asp:TabContainer runat="server"  >
             <asp:TabPanel runat="server" HeaderText="Exactitud">
+
                 <ContentTemplate>
                    <asp:GridView ID="GridViewExactitud" runat="server" AutoGenerateColumns="False" GridLines="None"
                     AllowPaging="true" HorizontalAlign="Center" Width="100%" PageSize="20"
@@ -97,6 +120,11 @@
                 </ContentTemplate>
             </asp:TabPanel>
             </asp:TabContainer>
+
+          </asp:Panel>
+            <asp:RoundedCornersExtender ID="RoundedCornersExtender3" runat="server" TargetControlID="PanelTabs"
+                    Radius="8" Color="#F2F2F2" Corners="All" Enabled="true">
+            </asp:RoundedCornersExtender>
 
     </asp:Panel>
     </div>

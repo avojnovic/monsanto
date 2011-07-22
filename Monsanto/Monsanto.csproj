@@ -52,6 +52,9 @@
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Telerik.Web.UI, Version=2010.2.713.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\ChangePassword.aspx" />
@@ -59,11 +62,15 @@
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="Images\cb_square_empty.png" />
     <Content Include="Images\File-Open-icon.png" />
+    <Content Include="Images\Home.png" />
     <Content Include="Images\logosuperior.png" />
+    <Content Include="Images\Proceso.png" />
     <Content Include="Images\return.png" />
     <Content Include="Images\save.png" />
     <Content Include="login.aspx" />
+    <Content Include="Procesamiento.aspx" />
     <Content Include="Scripts\jquery.js" />
     <Content Include="Styles\Site.css" />
     <Content Include="Global.asax" />
@@ -132,6 +139,13 @@
     </Compile>
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Procesamiento.aspx.cs">
+      <DependentUpon>Procesamiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Procesamiento.aspx.designer.cs">
+      <DependentUpon>Procesamiento.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

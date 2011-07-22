@@ -33,3 +33,35 @@
  }     
 .mGrid .pgr a { color: #666; text-decoration: none; }  
 .mGrid .pgr a:hover { color: #000; text-decoration: none; }  
+
+/* TELERIK  
+----------------------------------------------------------*/
+ .imgBtnTable td
+        {
+            border-bottom: 1px solid #eee;
+            padding: 5px;
+        }
+        
+        .imgBtnTable td .txtImg
+        {
+            display: block;
+            float: left;
+            width: 150px;
+        }
+        .imgBtnTable td .text
+        {
+            width: 400px;
+        }
+        .imgBtnTable td.center
+        {
+            text-align: center;
+            border-right: 1px solid #eee;
+        }
+        .goButtonClassHov .rbText
+        {
+            color: White !important;
+        }
+        .prevButtonClassHov .rbText
+        {
+            color: Yellow !important;
+        }
