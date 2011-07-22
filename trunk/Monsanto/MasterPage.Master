@@ -15,13 +15,30 @@
 <script src="Scripts/jquery.js"></script>
 
 
-<body style="width: 960px; margin:0 auto;">
-       <form id="form1" runat="server" >
+<body style="width: 960px; margin:0 auto; background-color:white; height:100%;">
+       <form id="form1" runat="server" style="background-color:White; height:768px;"  >
             <div>
                 <center>
                 <img src="Images/logosuperior.png" alt="EXCELENCIA MAGNUN" />
                    
                 </center>
+
+                <asp:Panel runat="server" ID="PanelIconos" >
+                
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" >
+                   <tr>
+                   <td >
+                        
+                   </td>
+                    <td style=" width:100px;">
+                        <asp:ImageButton ID="BtnHome" Width="32px" Height="32px" ImageUrl="~/Images/Home.png" runat="server" onclick="BtnToHome" ToolTip="Home" />
+                        <asp:ImageButton ID="BtnProceso" Width="32px" Height="32px" ImageUrl="~/Images/Proceso.png" runat="server" onclick="BtnToProcess" ToolTip="Procesamiento" />
+                    </td>
+                    </tr>
+                </table>
+
+                <h1 style="border-bottom: 4px solid #BD9A72; font-size: 15pt;"></h1>
+                </asp:Panel>
             </div>
 
       <act:ToolkitScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout="60000"
