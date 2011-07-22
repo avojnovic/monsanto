@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Monsanto.MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="act" %>
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link type="text/css" rel="stylesheet" href="Styles/Site.css" />
+    <title>Monsanto Excelencia Magnum</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<script src="Scripts/jquery.js"></script>
+
+
+<body style="width: 960px; margin:0 auto;">
+       <form id="form1" runat="server" >
+            <div>
+                <center>
+                <img src="Images/logosuperior.png" alt="EXCELENCIA MAGNUN" />
+                   
+                </center>
+            </div>
+
+      <act:ToolkitScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout="60000"
+            EnablePageMethods="true" OnAsyncPostBackError="ScriptManager1_AsyncPostBackError">
+            <Services>
+                <asp:ServiceReference Path="~/webmethods.asmx" />
+            </Services>
+        </act:ToolkitScriptManager>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

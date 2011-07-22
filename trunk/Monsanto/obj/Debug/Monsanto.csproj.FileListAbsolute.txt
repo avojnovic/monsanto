@@ -1,0 +1,15 @@
+C:\Proyectos\Monsanto\Monsanto\bin\Monsanto.dll
+C:\Proyectos\Monsanto\Monsanto\bin\Monsanto.pdb
+C:\Proyectos\Monsanto\Monsanto\obj\Debug\ResolveAssemblyReference.cache
+C:\Proyectos\Monsanto\Monsanto\obj\Debug\Monsanto.dll
+C:\Proyectos\Monsanto\Monsanto\obj\Debug\Monsanto.pdb
+C:\Proyectos\Monsanto\Monsanto\bin\BussinessObjects.dll
+C:\Proyectos\Monsanto\Monsanto\bin\Utils.dll
+C:\Proyectos\Monsanto\Monsanto\bin\BussinessObjects.pdb
+C:\Proyectos\Monsanto\Monsanto\bin\Utils.pdb
+C:\Proyectos\Monsanto\Monsanto\bin\AjaxControlToolkit.dll
+C:\Proyectos\Monsanto\Monsanto\bin\System.Web.Ajax.dll
+C:\Proyectos\Monsanto\Monsanto\bin\AjaxControlToolkit.pdb
+C:\Proyectos\Monsanto\Monsanto\bin\System.Web.Ajax.pdb
+C:\Proyectos\Monsanto\Monsanto\bin\DAO.dll
+C:\Proyectos\Monsanto\Monsanto\bin\DAO.pdb
