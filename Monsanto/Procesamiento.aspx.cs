@@ -11,7 +11,19 @@ namespace Monsanto
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lblUltEnvEmails.Text =DateTime.Now.ToShortDateString() +" "+ DateTime.Now.ToShortTimeString();
+            lblUltProc.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
         }
+
+        protected void procesar_click(object sender, EventArgs e)
+        {
+           
+        }
+
+        protected void email_click(object sender, EventArgs e)
+        {
+         
+        }
+
     }
 }

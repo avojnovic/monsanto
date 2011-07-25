@@ -13,20 +13,13 @@ namespace DAO
     {
         public static List<CentroDeServicio> obtenerCentrosServicio()
         {
-             SqlConnection myConnection = new SqlConnection();
-            Connection.open(myConnection);
+          
 
 
-            DataTable dt = new DataTable();
+           
             string query = "Select * from dbo.CentrosDeServicio";
 
-            SqlCommand cmm = new SqlCommand(query, myConnection);
-            cmm.CommandTimeout=6000;
-            SqlDataAdapter da= new  SqlDataAdapter(cmm);
-            da.Fill(dt);
-
-            DataTableReader datatableReader = dt.CreateDataReader();
-            myConnection.Close();
+            DataTableReader datatableReader = Connection.getFromDataBase(query);
 
             List<CentroDeServicio> _listCentros = new List<CentroDeServicio>();
 
@@ -44,6 +37,8 @@ namespace DAO
             return _listCentros;
         
         }
+
+       
 
 
     }
