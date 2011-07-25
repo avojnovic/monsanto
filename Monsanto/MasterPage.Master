@@ -15,8 +15,9 @@
 <script type="text/javascript" src="Scripts/jquery.js"></script>
 
 
-<body style="width: 960px; margin:0 auto; background-color:white; height:100%;">
+<body style="width: 960px; margin:0 auto; background-color:White; height:100%;">
        <form id="form1" runat="server" style="background-color:White; height:768px;"  >
+       <asp:Panel  runat="server" ID="panelMaster" BackColor="White">
             <div>
                 <center>
                 <img src="Images/logosuperior.png" alt="EXCELENCIA MAGNUN" />
@@ -24,8 +25,8 @@
                 </center>
 
                 <asp:Panel runat="server" ID="PanelIconos" >
-                <h1 style="border-bottom: 4px solid #BD9A72; font-size: 1pt;"></h1>
-                <table border="0" cellpadding="0" cellspacing="0" width="100%" >
+                <h1 style="border-bottom: 4px solid #BD9A72; font-size: 0pt;"></h1>
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style=" background-color:#F2F7D4; " >
                    <tr style="height:5px" >
                     <td>
                     </td>
@@ -42,7 +43,7 @@
                    
                 </table>
 
-                <h1 style="border-bottom: 4px solid #BD9A72; font-size: 1pt;"></h1>
+                <h1 style="border-bottom: 4px solid #BD9A72; font-size: 0pt;"></h1>
                 </asp:Panel>
             </div>
 
@@ -57,6 +58,10 @@
         
 
         </asp:ContentPlaceHolder>
+        </asp:Panel>
+         <act:RoundedCornersExtender ID="RoundedCornersExtender2" runat="server" TargetControlID="panelMaster"
+                    Radius="8" Color="White" Corners="All" Enabled="true">
+            </act:RoundedCornersExtender>
     </form>
 </body>
 </html>

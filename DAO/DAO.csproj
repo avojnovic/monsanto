@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="CentroDeServicioDAO.cs" />
     <Compile Include="Connection.cs" />
+    <Compile Include="Metrica1DAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
