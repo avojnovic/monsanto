@@ -14,15 +14,21 @@ namespace Monsanto
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<CentroDeServicio> _listCentServ = CentroDeServicioDAO.obtenerCentrosServicio();
 
-            ddlCentroDeServicio.DataTextField = "nombre";
-            ddlCentroDeServicio.DataValueField = "id";
-            ddlCentroDeServicio.DataSource = _listCentServ;
-            ddlCentroDeServicio.DataBind();
+            if (!IsPostBack)
+            {
+                List<CentroDeServicio> _listCentServ = CentroDeServicioDAO.obtenerCentrosServicio();
 
-            cargarGrillaExactitud();
+                ddlCentroDeServicio.DataTextField = "nombre";
+                ddlCentroDeServicio.DataValueField = "id";
+                ddlCentroDeServicio.DataSource = _listCentServ;
+                ddlCentroDeServicio.DataBind();
 
+            
+
+                string id_centServ = ddlCentroDeServicio.SelectedValue;
+                cargarGrillaExactitud(id_centServ);
+            }
         }
 
         private void setearGrillaSiEstaVacia(GridView g)
@@ -34,32 +40,49 @@ namespace Monsanto
                 dt.Columns.Add("Numero");
                 dt.Columns.Add("Fecha");
                 dt.Columns.Add("Id");
+                dt.Columns.Add("Observacion");
+                dt.Columns.Add("Exceptuado");
 
+               
+                dt.Rows.Add(new object[] { "", "", "1", "", false });
 
-
-                dt.Rows.Add(new object[] { "", "", "1" });
-
+                dt.Rows[0].SetField(4, false);
                 g.DataSource = dt;
                 g.DataBind();
+
+                TextBox t = (TextBox)GridViewExactitud.Rows[0].FindControl("TxtObservacion");
+                t.Enabled = false;
+                CheckBox c= (CheckBox)GridViewExactitud.Rows[0].FindControl("CheckBoxExcep");
+                c.Enabled = false;
             }
 
         }
 
-        //Exactitud
-        private void cargarGrillaExactitud()
+        protected void ddlCentroDeServicio_modified(object sender, EventArgs e)
         {
+            string id_centServ = ddlCentroDeServicio.SelectedValue;
+            cargarGrillaExactitud(id_centServ);
+        }
+
+        //Exactitud
+        private void cargarGrillaExactitud(string id_centServ)
+        {
+
+           List<metrica1> _metrica1= Metrica1DAO.obtenerMetricas(id_centServ);
+           GridViewExactitud.DataSource = _metrica1;
+           GridViewExactitud.DataBind();
+
             setearGrillaSiEstaVacia(GridViewExactitud);
         }
 
         protected void gridExactitud_OnPageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            cargarGrillaExactitud();
+            string id_centServ = ddlCentroDeServicio.SelectedValue;
+            cargarGrillaExactitud(id_centServ);
             this.GridViewExactitud.PageIndex = e.NewPageIndex;
             this.GridViewExactitud.DataBind();
 
-            TextBox t=(TextBox)GridViewExactitud.Rows[GridViewExactitud.SelectedIndex].FindControl("TextBox1");
             
-
         }
         //FIN Exactitud
 
@@ -69,7 +92,18 @@ namespace Monsanto
         {
             for (int i = 0; i < GridViewExactitud.Rows.Count; i++)
 			{
-			    if()
+                
+                //CheckBox c = (CheckBox)GridViewExactitud.Rows[GridViewExactitud.SelectedIndex].FindControl("CheckBoxExcep");
+
+                if (((CheckBox)GridViewExactitud.Rows[i].FindControl("CheckBoxExcep")).Checked)
+                {
+                    TextBox t = (TextBox)GridViewExactitud.Rows[i].FindControl("TxtObservacion");
+
+
+
+                }
+
+
 			} 
             
         }
