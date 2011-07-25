@@ -25,25 +25,10 @@ namespace Monsanto
 
         }
 
-
-        //Exactitud
-        protected void gridExactitud_OnPageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            cargarGrillaExactitud();
-            this.GridViewExactitud.PageIndex = e.NewPageIndex;
-            this.GridViewExactitud.DataBind();
-        }
-
-        private void cargarGrillaExactitud()
+        private void setearGrillaSiEstaVacia(GridView g)
         {
 
-            setearGrillaExactitudSiEstaVacia();
-        }
-
-        private void setearGrillaExactitudSiEstaVacia()
-        {
-
-            if (GridViewExactitud.Rows.Count == 0)
+            if (g.Rows.Count == 0)
             {
                 DataTable dt = new DataTable();
                 dt.Columns.Add("Numero");
@@ -54,16 +39,39 @@ namespace Monsanto
 
                 dt.Rows.Add(new object[] { "", "", "1" });
 
-                GridViewExactitud.DataSource = dt;
-                GridViewExactitud.DataBind();
+                g.DataSource = dt;
+                g.DataBind();
             }
 
         }
 
+        //Exactitud
+        private void cargarGrillaExactitud()
+        {
+            setearGrillaSiEstaVacia(GridViewExactitud);
+        }
+
+        protected void gridExactitud_OnPageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            cargarGrillaExactitud();
+            this.GridViewExactitud.PageIndex = e.NewPageIndex;
+            this.GridViewExactitud.DataBind();
+
+            TextBox t=(TextBox)GridViewExactitud.Rows[GridViewExactitud.SelectedIndex].FindControl("TextBox1");
+            
+
+        }
+        //FIN Exactitud
+
+
 
         protected void BtnGuardar_Click(object sender, EventArgs e)
         {
-
+            for (int i = 0; i < GridViewExactitud.Rows.Count; i++)
+			{
+			    if()
+			} 
+            
         }
 
         protected void BtnCancelar_Click(object sender, EventArgs e)

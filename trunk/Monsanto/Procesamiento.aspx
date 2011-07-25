@@ -24,21 +24,34 @@
                 <tr>
                     <td>
                         
-                    <telerik:RadButton ID="btnBgrImg4" runat="server" Width="280px" Height="75px" Font-Size="Large" Text="PROCESAR"
-                        ForeColor="Black" HoveredCssClass="goButtonClassHov">
+                    <telerik:RadButton ID="btnBgrImg4" runat="server" Width="203px" Height="46px" Font-Size="Large" Text="PROCESAR"
+                        ForeColor="Black" HoveredCssClass="goButtonClassHov" OnClick="procesar_click" >
                         <Image ImageUrl="images/cb_square_empty.png" IsBackgroundImage="true" />
                     </telerik:RadButton>
 
+                    </td>
+                    <td align="left">
+                        <asp:Label ID="Label1" runat="server" Text="Ultimo proceso: "></asp:Label> 
+                        <asp:Label ID="lblUltProc" runat="server" Text=""></asp:Label> 
                     </td>        
+                </tr>
+                <tr style="height:20px;">
+                    <td>
+
+                    </td>    
                 </tr>
                  <tr>
                     <td>
                         
-                    <telerik:RadButton ID="RadButton1" runat="server" Width="280px" Height="75px" Font-Size="Large" Text="ENVIAR EMAILS"
-                        ForeColor="Black" HoveredCssClass="goButtonClassHov">
+                    <telerik:RadButton ID="RadButton1" runat="server" Width="203px" Height="46px" Font-Size="Large" Text="ENVIAR EMAILS"
+                        ForeColor="Black" HoveredCssClass="goButtonClassHov" OnClick="email_click">
                         <Image ImageUrl="images/cb_square_empty.png" IsBackgroundImage="true" />
                     </telerik:RadButton>
 
+                    </td>
+                    <td align="left">
+                     <asp:Label ID="Label2" runat="server" Text="Ultimo envio emails: "></asp:Label> 
+                     <asp:Label ID="lblUltEnvEmails" runat="server" Text=""></asp:Label> 
                     </td>        
                 </tr>
                         

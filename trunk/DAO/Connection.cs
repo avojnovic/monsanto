@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Data;
 
 namespace DAO
 {
@@ -38,5 +39,21 @@ namespace DAO
                 Console.WriteLine(e.ToString());
             }
         }
+
+
+        public static DataTableReader getFromDataBase(string query)
+        {
+            SqlConnection myConnection = new SqlConnection();
+            Connection.open(myConnection);
+            DataTable dt = new DataTable();
+            SqlCommand cmm = new SqlCommand(query, myConnection);
+            cmm.CommandTimeout = 6000;
+            SqlDataAdapter da = new SqlDataAdapter(cmm);
+            da.Fill(dt);
+            DataTableReader datatableReader = dt.CreateDataReader();
+            myConnection.Close();
+            return datatableReader;
+        }
+
     }
 }
