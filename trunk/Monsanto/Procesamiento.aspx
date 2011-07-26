@@ -10,22 +10,21 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+        <br />
 
  
+ 
      <div id="content" style=" height:100%;">
-      <asp:Panel runat="server" ID="panel1" Visible="true" >
-        
-        <br />
-        <br />
-        <br />
-        <br />
+       <h1 class="lineas" ></h1>
+      <asp:Panel runat="server" ID="panel1" Visible="true" Width="100%" class="background_color_generic" >
+             <br />
         <center>
             <table>
                 <tr>
                     <td>
                         
-                    <telerik:RadButton ID="btnBgrImg4" runat="server" Width="203px" Height="46px" Font-Size="Large" Text="PROCESAR"
-                        ForeColor="Black" HoveredCssClass="goButtonClassHov" OnClick="procesar_click" >
+                    <telerik:RadButton ID="btnBgrImg4" runat="server" Width="241px" Height="33px" Font-Size="Large" Text="PROCESAR"
+                        ForeColor="#8E8E8E" HoveredCssClass="goButtonClassHov" OnClick="procesar_click" >
                         <Image ImageUrl="images/cb_square_empty.png" IsBackgroundImage="true" />
                     </telerik:RadButton>
 
@@ -43,8 +42,8 @@
                  <tr>
                     <td>
                         
-                    <telerik:RadButton ID="RadButton1" runat="server" Width="203px" Height="46px" Font-Size="Large" Text="ENVIAR EMAILS"
-                        ForeColor="Black" HoveredCssClass="goButtonClassHov" OnClick="email_click">
+                    <telerik:RadButton ID="RadButton1" runat="server" Width="241px" Height="33px"  Font-Size="Large" Text="ENVIAR EMAILS"
+                        ForeColor="#8E8E8E" HoveredCssClass="goButtonClassHov" OnClick="email_click">
                         <Image ImageUrl="images/cb_square_empty.png" IsBackgroundImage="true" />
                     </telerik:RadButton>
 
@@ -60,8 +59,10 @@
         </center>
 
 
-
+       <br />
       </asp:Panel>
+      <h1 class="lineas" ></h1>
+
     </div>
 
 </asp:Content>

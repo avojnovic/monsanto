@@ -12,6 +12,7 @@ namespace Monsanto
 {
     public partial class Default : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -69,7 +70,9 @@ namespace Monsanto
         {
 
            List<metrica1> _metrica1= Metrica1DAO.obtenerMetricas(id_centServ);
+           
            GridViewExactitud.DataSource = _metrica1;
+          
            GridViewExactitud.DataBind();
 
             setearGrillaSiEstaVacia(GridViewExactitud);
@@ -90,21 +93,30 @@ namespace Monsanto
 
         protected void BtnGuardar_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < GridViewExactitud.Rows.Count; i++)
-			{
-                
-                //CheckBox c = (CheckBox)GridViewExactitud.Rows[GridViewExactitud.SelectedIndex].FindControl("CheckBoxExcep");
 
-                if (((CheckBox)GridViewExactitud.Rows[i].FindControl("CheckBoxExcep")).Checked)
+          
+            foreach (GridViewRow r in GridViewExactitud.DirtyRows)
+	        {
+                if (((CheckBox)GridViewExactitud.Rows[r.RowIndex].FindControl("CheckBoxExcep")).Checked)
                 {
-                    TextBox t = (TextBox)GridViewExactitud.Rows[i].FindControl("TxtObservacion");
-
-
-
+                    TextBox t = (TextBox)GridViewExactitud.Rows[r.RowIndex].FindControl("TxtObservacion");
                 }
+	        }
+
+            
+           
+            //for (int i = 0; i < GridViewExactitud.Rows.Count; i++)
+            //{
+                
+            //    //CheckBox c = (CheckBox)GridViewExactitud.Rows[GridViewExactitud.SelectedIndex].FindControl("CheckBoxExcep");
+
+            //    if (((CheckBox)GridViewExactitud.Rows[i].FindControl("CheckBoxExcep")).Checked)
+            //    {
+            //        TextBox t = (TextBox)GridViewExactitud.Rows[i].FindControl("TxtObservacion");
+            //    }
 
 
-			} 
+            //} 
             
         }
 
