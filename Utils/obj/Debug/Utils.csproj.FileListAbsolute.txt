@@ -3,3 +3,8 @@ C:\Proyectos\Monsanto\Utils\bin\Debug\Utils.dll
 C:\Proyectos\Monsanto\Utils\bin\Debug\Utils.pdb
 C:\Proyectos\Monsanto\Utils\obj\Debug\Utils.dll
 C:\Proyectos\Monsanto\Utils\obj\Debug\Utils.pdb
+C:\Proyectos\MonsantoV1\Utils\bin\Debug\Utils.dll
+C:\Proyectos\MonsantoV1\Utils\bin\Debug\Utils.pdb
+C:\Proyectos\MonsantoV1\Utils\obj\Debug\ResolveAssemblyReference.cache
+C:\Proyectos\MonsantoV1\Utils\obj\Debug\Utils.dll
+C:\Proyectos\MonsantoV1\Utils\obj\Debug\Utils.pdb

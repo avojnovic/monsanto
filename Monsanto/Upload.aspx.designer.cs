@@ -10,7 +10,7 @@
 namespace Monsanto {
     
     
-    public partial class Default {
+    public partial class Upload {
         
         /// <summary>
         /// Control panel1.
@@ -22,66 +22,48 @@ namespace Monsanto {
         protected global::System.Web.UI.WebControls.Panel panel1;
         
         /// <summary>
-        /// Control paneCentrServ.
+        /// Control RadUpload1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel paneCentrServ;
+        protected global::Telerik.Web.UI.RadUpload RadUpload1;
         
         /// <summary>
-        /// Control lblCentroServ.
+        /// Control UploadButton.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCentroServ;
+        protected global::System.Web.UI.WebControls.ImageButton UploadButton;
         
         /// <summary>
-        /// Control ddlCentroDeServicio.
+        /// Control Customvalidator1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCentroDeServicio;
+        protected global::System.Web.UI.WebControls.CustomValidator Customvalidator1;
         
         /// <summary>
-        /// Control BtnAceptar.
+        /// Control UploadStatusLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BtnAceptar;
+        protected global::System.Web.UI.WebControls.Label UploadStatusLabel;
         
         /// <summary>
-        /// Control BtnCancelar.
+        /// Control GridView1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BtnCancelar;
-        
-        /// <summary>
-        /// Control PanelTabs.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelTabs;
-        
-        /// <summary>
-        /// Control GridViewExactitud.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::Utils.BulkEditGridView GridViewExactitud;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
     }
 }

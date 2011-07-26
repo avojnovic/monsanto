@@ -44,15 +44,30 @@ namespace DAO
         public static DataTableReader getFromDataBase(string query)
         {
             SqlConnection myConnection = new SqlConnection();
-            Connection.open(myConnection);
-            DataTable dt = new DataTable();
-            SqlCommand cmm = new SqlCommand(query, myConnection);
-            cmm.CommandTimeout = 6000;
-            SqlDataAdapter da = new SqlDataAdapter(cmm);
-            da.Fill(dt);
-            DataTableReader datatableReader = dt.CreateDataReader();
-            myConnection.Close();
-            return datatableReader;
+            
+            try
+            {
+                Connection.open(myConnection);
+                DataTable dt = new DataTable();
+                SqlCommand cmm = new SqlCommand(query, myConnection);
+                cmm.CommandTimeout = 6000;
+                SqlDataAdapter da = new SqlDataAdapter(cmm);
+                da.Fill(dt);
+                DataTableReader datatableReader = dt.CreateDataReader();
+               
+                return datatableReader;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                myConnection.Close();
+            }
+           
         }
 
     }

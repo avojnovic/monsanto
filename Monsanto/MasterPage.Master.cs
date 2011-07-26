@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
 
 namespace Monsanto
 {
@@ -11,7 +12,13 @@ namespace Monsanto
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                if (Session["user"] != null)
+                    lblUsuario.Text = Session["user"].ToString();
+                else
+                    Response.Redirect("login.aspx");
+            }
         }
 
         protected void ScriptManager1_AsyncPostBackError(object sender, AsyncPostBackErrorEventArgs e)
@@ -20,6 +27,12 @@ namespace Monsanto
             Response.Redirect(Request.Url.ToString());
         }
 
+
+
+        protected void BtnToUpload(object sender, EventArgs e)
+        {
+            Response.Redirect("Upload.aspx");
+        }
 
         protected void BtnToHome(object sender, EventArgs e)
         {

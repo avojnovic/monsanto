@@ -12,11 +12,18 @@
 
      
      <div id="content" style=" height:100%;">
+
       <asp:Panel runat="server" ID="panel1" Visible="true" >
         
             <br />
-            <asp:Panel runat="server" ID="paneCentrServ" Visible="true"  Width="100%" style="background-color:#F2F7D4">
+            <h1 class="lineas" ></h1>
+            <asp:Panel runat="server" ID="paneCentrServ" Visible="true"  Width="100%" class="background_color_generic" >
                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr style="height:5px" >
+                    <td>
+
+                    </td>
+                 </tr>
                 <tr>
                 <td style=" width:400px ">
                     <asp:Label runat="server" ID="lblCentroServ" Text="Centro de Servicio"></asp:Label>
@@ -25,33 +32,36 @@
                 <td>
                 
                 </td>
-                <td align="right" style=" width:100px;">
+                <td align="right"  style=" width:200px;">
                      <asp:ImageButton ID="BtnAceptar" Width="32px" Height="32px" ImageUrl="~/Images/save.png" runat="server" onclick="BtnGuardar_Click" ToolTip="Guardar" />
                      <asp:ImageButton ID="BtnCancelar" Width="32px" Height="32px" ImageUrl="~/Images/return.png" runat="server" onclick="BtnCancelar_Click"  ToolTip="Cancelar" />
              
                 </td>
+                 <td style=" width:10px;">
+
+                </td>
+
                 </tr>
                 </table>
             </asp:Panel>
-            <asp:RoundedCornersExtender ID="RoundedCornersExtender2" runat="server" TargetControlID="paneCentrServ"
-                    Radius="8" Color="#F2F7D4" Corners="All" Enabled="true">
-            </asp:RoundedCornersExtender>
-            
+            <h1 class="lineas" ></h1>
        
              <br />
 
-        <h1 style="border-bottom: 4px solid #BD9A72; font-size: 0pt;"></h1>
-         <asp:Panel runat="server" ID="PanelTabs" Visible="true"  Width="100%" style="background-color:#F2F7D4;"  >
-    
+        <h1 class="lineas" ></h1>
+         <asp:Panel runat="server" ID="PanelTabs" Visible="true"  Width="100%" class="background_color_generic"  >
+            <br />
            <asp:TabContainer runat="server" Width="950px" >
             <asp:TabPanel runat="server" HeaderText="Exactitud">
 
                 <ContentTemplate>
-                   <asp:GridView ID="GridViewExactitud" runat="server" AutoGenerateColumns="False" GridLines="None"
+                   <ctrl:BulkEditGridView ID="GridViewExactitud" runat="server" AutoGenerateColumns="False" GridLines="None"
                     AllowPaging="true" HorizontalAlign="Center" Width="100%" PageSize="20"
                       CssClass="mGrid"  PagerStyle-CssClass="pgr"  AlternatingRowStyle-CssClass="alt"  OnPageIndexChanging="gridExactitud_OnPageIndexChanging"  >
                 <PagerSettings PageButtonCount="5" />
                 <Columns>
+                    
+                    <asp:BoundField DataField="Id" HeaderText="ID" ReadOnly="True" SortExpression="id" />
                     <asp:BoundField DataField="Numero" HeaderText="Numero" ReadOnly="True" SortExpression="numero" />
                     <asp:BoundField DataField="Fecha" HeaderText="Fecha" SortExpression="fecha" />
                     
@@ -70,6 +80,7 @@
                         </ItemTemplate>
                      </asp:TemplateField>
 
+
                      <%--<asp:TemplateField  ItemStyle-Width="25px">
                          <ItemTemplate>  
                             <a href="Edit_Proyecto.aspx?id=<%# Eval("id") %>" >
@@ -80,7 +91,7 @@
 
                 </Columns>
             <SelectedRowStyle BackColor="Silver" />
-            </asp:GridView>
+            </ctrl:BulkEditGridView>
 
                 </ContentTemplate>
             </asp:TabPanel>
@@ -121,10 +132,10 @@
             </asp:TabPanel>
             </asp:TabContainer>
 
+             <br />
+
           </asp:Panel>
-            <asp:RoundedCornersExtender ID="RoundedCornersExtender3" runat="server" TargetControlID="PanelTabs"
-                    Radius="8" Color="#F2F7D4" Corners="All" Enabled="true">
-            </asp:RoundedCornersExtender>
+           <h1 class="lineas" ></h1>
 
     </asp:Panel>
     </div>
