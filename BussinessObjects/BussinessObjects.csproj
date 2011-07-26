@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CentroDeServicio.cs" />
+    <Compile Include="GridStateValues.cs" />
     <Compile Include="metrica1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

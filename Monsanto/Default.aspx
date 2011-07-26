@@ -56,14 +56,16 @@
 
                 <ContentTemplate>
                    <ctrl:BulkEditGridView ID="GridViewExactitud" runat="server" AutoGenerateColumns="False" GridLines="None"
-                    AllowPaging="true" HorizontalAlign="Center" Width="100%" PageSize="20"
-                      CssClass="mGrid"  PagerStyle-CssClass="pgr"  AlternatingRowStyle-CssClass="alt"  OnPageIndexChanging="gridExactitud_OnPageIndexChanging"  >
+                    AllowPaging="true" HorizontalAlign="Center" Width="100%" PageSize="15" EnableViewState="true" 
+                      CssClass="mGrid"  PagerStyle-CssClass="pgr"  AlternatingRowStyle-CssClass="alt"  OnPageIndexChanging="gridExactitud_OnPageIndexChanging" 
+                      DataKeyNames="Id" 
+                       >
                 <PagerSettings PageButtonCount="5" />
                 <Columns>
                     
                     <asp:BoundField DataField="Id" HeaderText="ID" ReadOnly="True" SortExpression="id" />
                     <asp:BoundField DataField="Numero" HeaderText="Numero" ReadOnly="True" SortExpression="numero" />
-                    <asp:BoundField DataField="Fecha" HeaderText="Fecha" SortExpression="fecha" />
+                    <asp:BoundField DataField="Fecha" HeaderText="Fecha" ReadOnly="True" SortExpression="fecha" />
                     
 
                      <asp:TemplateField HeaderText="Exceptuado" HeaderStyle-Width="20px"  >
