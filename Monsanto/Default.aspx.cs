@@ -80,12 +80,18 @@ namespace Monsanto
 
         protected void gridExactitud_OnPageIndexChanging(object sender, GridViewPageEventArgs e)
         {
+
+
+            foreach (GridViewRow r in GridViewExactitud.DirtyRows)
+            {
+
+            }
+
             string id_centServ = ddlCentroDeServicio.SelectedValue;
             cargarGrillaExactitud(id_centServ);
             this.GridViewExactitud.PageIndex = e.NewPageIndex;
             this.GridViewExactitud.DataBind();
 
-            
         }
         //FIN Exactitud
 
