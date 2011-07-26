@@ -18,6 +18,9 @@ namespace Monsanto
 
             if (!IsPostBack)
             {
+                Session["indexs"] = null;
+
+
                 List<CentroDeServicio> _listCentServ = CentroDeServicioDAO.obtenerCentrosServicio();
 
                 ddlCentroDeServicio.DataTextField = "nombre";
@@ -81,16 +84,43 @@ namespace Monsanto
         protected void gridExactitud_OnPageIndexChanging(object sender, GridViewPageEventArgs e)
         {
 
+           Dictionary<int,GridStateValues> indexs;
+            if(Session["indexs"]!=null)
+                indexs = (Dictionary<int, GridStateValues>)Session["indexs"];
+            else
+                indexs = new Dictionary<int, GridStateValues>();
+
 
             foreach (GridViewRow r in GridViewExactitud.DirtyRows)
             {
+                GridStateValues gv=new GridStateValues();
+                gv._checked1=((CheckBox)GridViewExactitud.Rows[r.RowIndex].FindControl("CheckBoxExcep")).Checked;
+                gv.Text=((TextBox)GridViewExactitud.Rows[r.RowIndex].FindControl("TxtObservacion")).Text;
 
+                indexs.Add((int)GridViewExactitud.DataKeys[r.RowIndex].Value,gv );
             }
+
+
+            Session["indexs"] = indexs;
 
             string id_centServ = ddlCentroDeServicio.SelectedValue;
             cargarGrillaExactitud(id_centServ);
             this.GridViewExactitud.PageIndex = e.NewPageIndex;
             this.GridViewExactitud.DataBind();
+
+            foreach (GridViewRow row in GridViewExactitud.Rows)
+            {
+                int index = (int)GridViewExactitud.DataKeys[row.RowIndex].Value;
+
+                if (indexs.Keys.Contains(index))
+                {
+                    ((CheckBox)row.FindControl("CheckBoxExcep")).Checked = indexs[index]._checked1;
+                    ((TextBox)row.FindControl("TxtObservacion")).Text = indexs[index].Text;
+                }
+            }
+
+           
+          
 
         }
         //FIN Exactitud
@@ -99,17 +129,19 @@ namespace Monsanto
 
         protected void BtnGuardar_Click(object sender, EventArgs e)
         {
+            Dictionary<int, string> indexs = (Dictionary<int, string>)Session["indexs"];
 
-          
-            foreach (GridViewRow r in GridViewExactitud.DirtyRows)
-	        {
-                if (((CheckBox)GridViewExactitud.Rows[r.RowIndex].FindControl("CheckBoxExcep")).Checked)
+            if (indexs != null)
+            {
+                foreach (int r in indexs.Keys.ToList())
                 {
-                    TextBox t = (TextBox)GridViewExactitud.Rows[r.RowIndex].FindControl("TxtObservacion");
+                    if (((CheckBox)GridViewExactitud.Rows[r].FindControl("CheckBoxExcep")).Checked)
+                    {
+                        TextBox t = (TextBox)GridViewExactitud.Rows[r].FindControl("TxtObservacion");
+                    }
                 }
-	        }
 
-            
+            }
            
             //for (int i = 0; i < GridViewExactitud.Rows.Count; i++)
             //{
@@ -128,7 +160,7 @@ namespace Monsanto
 
         protected void BtnCancelar_Click(object sender, EventArgs e)
         {
-
+            Session["indexs"] = null;
         }
 
     }

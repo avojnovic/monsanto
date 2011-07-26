@@ -33,7 +33,9 @@
           <br />
 
           <br />
-          <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+          <asp:GridView ID="GridView1" runat="server" GridLines="None"
+                    AllowPaging="true" HorizontalAlign="Center" Width="100%" PageSize="15" EnableViewState="true" 
+                      CssClass="mGrid"  PagerStyle-CssClass="pgr" ></asp:GridView>
           <br />
 
 
