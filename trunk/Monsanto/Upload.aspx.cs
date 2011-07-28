@@ -29,12 +29,12 @@ namespace Monsanto
                 savePath += fileName;
                 RadUpload1.UploadedFiles[0].SaveAs(savePath);
 
-                UploadStatusLabel.Text = "Your file was saved as " + fileName;
+                UploadStatusLabel.Text = "Archivo subido: " + fileName;
                 read_file(savePath);
             }
             else
             {
-                UploadStatusLabel.Text = "You did not specify a file to upload.";
+                UploadStatusLabel.Text = "No se especifico ningun archivo para subir.";
             }
 
         }

@@ -41,6 +41,31 @@ namespace DAO
         }
 
 
+        public static void ExecuteNonQuery(string query)
+        { 
+            SqlConnection myConnection = new SqlConnection();
+
+            try
+            {
+                Connection.open(myConnection);
+
+                SqlCommand cmm = new SqlCommand(query, myConnection);
+                cmm.CommandTimeout = 6000;
+                cmm.ExecuteNonQuery();
+              
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                myConnection.Close();
+            }
+        }
+
         public static DataTableReader getFromDataBase(string query)
         {
             SqlConnection myConnection = new SqlConnection();

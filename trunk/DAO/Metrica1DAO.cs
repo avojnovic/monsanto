@@ -62,5 +62,30 @@ namespace DAO
 
            return obtenerMetricasGeneric(query);
        }
+
+
+
+       public static void actualizarMetricas(Dictionary<int, GridStateValues> gv)
+       {
+           string update = "update dbo.metrica1 set exceptuado={0}, observacion='{1}' where id={2}; ";
+
+            StringBuilder sb = new StringBuilder();
+           foreach (int i in gv.Keys.ToList())
+           {
+               string check="";
+              if( gv[i]._checked1)
+                  check="1";
+               else
+                  check="0";
+              
+
+               sb.Append(string.Format(update,check,gv[i].Text,i.ToString()));
+               
+
+           }
+
+           Connection.ExecuteNonQuery(sb.ToString());
+
+       }
     }
 }

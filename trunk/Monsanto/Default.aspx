@@ -26,7 +26,7 @@
                  </tr>
                 <tr>
                 <td style=" width:400px ">
-                    <asp:Label runat="server" ID="lblCentroServ" Text="Centro de Servicio"></asp:Label>
+                    &nbsp<asp:Label runat="server" ID="lblCentroServ" Text="Centro de Servicio"></asp:Label>
                     <asp:DropDownList ID="ddlCentroDeServicio" runat="server" Width="200px" OnSelectedIndexChanged="ddlCentroDeServicio_modified" AutoPostBack="true"> </asp:DropDownList>
                 </td>
                 <td>
@@ -58,8 +58,7 @@
                    <ctrl:BulkEditGridView ID="GridViewExactitud" runat="server" AutoGenerateColumns="False" GridLines="None"
                     AllowPaging="true" HorizontalAlign="Center" Width="100%" PageSize="15" EnableViewState="true" 
                       CssClass="mGrid"  PagerStyle-CssClass="pgr"  AlternatingRowStyle-CssClass="alt"  OnPageIndexChanging="gridExactitud_OnPageIndexChanging" 
-                      DataKeyNames="Id" 
-                       >
+                      DataKeyNames="Id">
                 <PagerSettings PageButtonCount="5" />
                 <Columns>
                     

@@ -84,24 +84,7 @@ namespace Monsanto
         protected void gridExactitud_OnPageIndexChanging(object sender, GridViewPageEventArgs e)
         {
 
-           Dictionary<int,GridStateValues> indexs;
-            if(Session["indexs"]!=null)
-                indexs = (Dictionary<int, GridStateValues>)Session["indexs"];
-            else
-                indexs = new Dictionary<int, GridStateValues>();
-
-
-            foreach (GridViewRow r in GridViewExactitud.DirtyRows)
-            {
-                GridStateValues gv=new GridStateValues();
-                gv._checked1=((CheckBox)GridViewExactitud.Rows[r.RowIndex].FindControl("CheckBoxExcep")).Checked;
-                gv.Text=((TextBox)GridViewExactitud.Rows[r.RowIndex].FindControl("TxtObservacion")).Text;
-
-                indexs.Add((int)GridViewExactitud.DataKeys[r.RowIndex].Value,gv );
-            }
-
-
-            Session["indexs"] = indexs;
+            Dictionary<int, GridStateValues> indexs = guardarDirtyFlagsGrillaExactitud();
 
             string id_centServ = ddlCentroDeServicio.SelectedValue;
             cargarGrillaExactitud(id_centServ);
@@ -123,44 +106,56 @@ namespace Monsanto
           
 
         }
+
+        private Dictionary<int, GridStateValues> guardarDirtyFlagsGrillaExactitud()
+        {
+            Dictionary<int, GridStateValues> indexs;
+            if (Session["indexs"] != null)
+                indexs = (Dictionary<int, GridStateValues>)Session["indexs"];
+            else
+                indexs = new Dictionary<int, GridStateValues>();
+
+
+            foreach (GridViewRow r in GridViewExactitud.DirtyRows)
+            {
+                GridStateValues gv = new GridStateValues();
+                gv._checked1 = ((CheckBox)GridViewExactitud.Rows[r.RowIndex].FindControl("CheckBoxExcep")).Checked;
+                gv.Text = ((TextBox)GridViewExactitud.Rows[r.RowIndex].FindControl("TxtObservacion")).Text;
+
+                if (!indexs.ContainsKey((int)GridViewExactitud.DataKeys[r.RowIndex].Value))
+                {
+                    indexs.Add((int)GridViewExactitud.DataKeys[r.RowIndex].Value, gv);
+                }
+                else
+                {
+                    indexs[(int)GridViewExactitud.DataKeys[r.RowIndex].Value] = gv;
+                }
+            }
+
+
+            Session["indexs"] = indexs;
+            return indexs;
+        }
         //FIN Exactitud
 
 
 
         protected void BtnGuardar_Click(object sender, EventArgs e)
         {
-            Dictionary<int, string> indexs = (Dictionary<int, string>)Session["indexs"];
-
-            if (indexs != null)
-            {
-                foreach (int r in indexs.Keys.ToList())
-                {
-                    if (((CheckBox)GridViewExactitud.Rows[r].FindControl("CheckBoxExcep")).Checked)
-                    {
-                        TextBox t = (TextBox)GridViewExactitud.Rows[r].FindControl("TxtObservacion");
-                    }
-                }
-
-            }
-           
-            //for (int i = 0; i < GridViewExactitud.Rows.Count; i++)
-            //{
-                
-            //    //CheckBox c = (CheckBox)GridViewExactitud.Rows[GridViewExactitud.SelectedIndex].FindControl("CheckBoxExcep");
-
-            //    if (((CheckBox)GridViewExactitud.Rows[i].FindControl("CheckBoxExcep")).Checked)
-            //    {
-            //        TextBox t = (TextBox)GridViewExactitud.Rows[i].FindControl("TxtObservacion");
-            //    }
 
 
-            //} 
+            Dictionary<int, GridStateValues> indexs = guardarDirtyFlagsGrillaExactitud();
+
+            Metrica1DAO.actualizarMetricas(indexs);
+
             
         }
 
         protected void BtnCancelar_Click(object sender, EventArgs e)
         {
             Session["indexs"] = null;
+            string id_centServ = ddlCentroDeServicio.SelectedValue;
+            cargarGrillaExactitud(id_centServ);
         }
 
     }
