@@ -14,15 +14,18 @@
         <table border="0" cellpadding="0" cellspacing="0" width="100%">
         
         <tr>
+            <td align="right" style=" width:230px;">
+                <asp:Label runat="server" ID="lblSelectFile" Text=" Seleccione el archivo excel a subir: "></asp:Label>
+            </td>
            <td style=" width:200px;">                
                 <telerik:RadUpload ID="RadUpload1" runat="server"  Width="100%" InitialFileInputsCount="1"  MaxFileInputsCount="1"  ControlObjectsVisibility="None" AllowedFileExtensions=".xls"/>
            </td>
-           <td  style=" width:30px;">  
+           <td >  
                 <asp:imageButton id="UploadButton" Width="32px" Height="32px" ToolTip="Upload" OnClick="UploadButton_Click" ImageUrl="~/Images/Upload_file.png" runat="server"></asp:imageButton>   
            </td>
             <td>  
                 <asp:CustomValidator ID="Customvalidator1" runat="server" Display="Dynamic" ClientValidationFunction="validateRadUpload1">
-                 <span style="FONT-SIZE: 11px;">Invalid extensions.</span>
+                 <span style="FONT-SIZE: 11px;">Extension de archivo invalida.</span>
                  </asp:CustomValidator>
             </td>
          </tr>
